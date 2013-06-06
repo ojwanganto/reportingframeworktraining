@@ -24,16 +24,16 @@
 	<bean parent="serviceContext">
 		<property name="moduleService">
 			<list>
-				<value>${project.parent.groupId}.${project.parent.artifactId}.api.ReportingTrainingServiceService</value>
+				<value>org.openmrs.module.reportingframeworktraining.service.ReportingTrainingService</value>
 				<bean
 					class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 					<property name="transactionManager">
 						<ref bean="transactionManager" />
 					</property>
 					<property name="target">
-						<bean class="${project.parent.groupId}.${project.parent.artifactId}.api.impl.ReportingTrainingServiceServiceImpl">
+						<bean class="org.openmrs.module.reportingframeworktraining.service.impl.ReportingTrainingServiceImpl">
 							<property name="dao">
-								<bean class="${project.parent.groupId}.${project.parent.artifactId}.api.db.hibernate.HibernateReportingTrainingServiceDAO">
+								<bean class="org.openmrs.module.reportingframeworktraining.db.hibernate.HibernateReportingTrainingServiceDAO">
 									<property name="sessionFactory">
 										<ref bean="sessionFactory" />
 									</property>

@@ -13,18 +13,21 @@
  */
 package org.openmrs.module.reportingframeworktraining.api;
 
-import static org.junit.Assert.*;
 import org.junit.Test;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.reportingframeworktraining.service.ReportingTrainingService;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 
+import static org.junit.Assert.assertNotNull;
+
 /**
- * Tests {@link ${ReportingTrainingServiceService}}.
+ * Tests {@link ${ReportingTrainingService}}.
  */
 public class  ReportingTrainingServiceServiceTest extends BaseModuleContextSensitiveTest {
 	
 	@Test
 	public void shouldSetupContext() {
-		assertNotNull(Context.getService(ReportingTrainingServiceService.class));
+		assertNotNull(Context.getService(ReportingTrainingService.class));
+
 	}
 }
