@@ -25,6 +25,7 @@ public class Last2CXRDataDefinitionEvaluator implements PatientDataEvaluator {
     @Override
     public EvaluatedPatientData evaluate(PatientDataDefinition definition, EvaluationContext context) throws EvaluationException {
 
+
         EvaluatedPatientData c = new EvaluatedPatientData(definition, context);
 
         if (context.getBaseCohort() != null && context.getBaseCohort().isEmpty()) {

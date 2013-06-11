@@ -9,6 +9,7 @@ import org.openmrs.module.reporting.data.patient.evaluator.PatientDataEvaluator;
 import org.openmrs.module.reporting.dataset.query.service.DataSetQueryService;
 import org.openmrs.module.reporting.evaluation.EvaluationContext;
 import org.openmrs.module.reporting.evaluation.EvaluationException;
+import org.openmrs.module.reportingframeworktraining.reporting.cohort.definition.data.CreatorForLastEncounterDataDefinition;
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +27,8 @@ public class CreatorForLastEncounterDataDefinitionEvaluator implements PatientDa
     @Override
     public EvaluatedPatientData evaluate(PatientDataDefinition definition, EvaluationContext context) throws EvaluationException {
 
-        EvaluatedPatientData c = new EvaluatedPatientData(definition, context);
+        CreatorForLastEncounterDataDefinition def = (CreatorForLastEncounterDataDefinition)definition;
+        EvaluatedPatientData c = new EvaluatedPatientData((PatientDataDefinition) def, context);
 
         if (context.getBaseCohort() != null && context.getBaseCohort().isEmpty()) {
             return c;
